@@ -14,7 +14,7 @@ struct RecipeDetailView: View {
     var body: some View {
         ScrollView {
             
-            VStack (alignment: .leading){
+            VStack (alignment: .leading) {
                 
                 // MARK: Image
                 Image(recipe.image)
@@ -27,8 +27,8 @@ struct RecipeDetailView: View {
                         .font(.headline)
                         .padding(.vertical, 5)
                     
-                    ForEach (recipe.ingredients, id: \.self) { item in
-                        Text("- " + item)
+                    ForEach (recipe.ingredients) { item in
+                        Text("- " + item.name)
                     }
                 }.padding(.horizontal, 10)
                 
